@@ -37,7 +37,7 @@ public class Ramka extends JFrame{
  public Ramka(){
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel buttonPanel = new JPanel(new GridLayout(7,2));
+        JPanel buttonPanel = new JPanel(new GridLayout(0,2));
         
         JMenuBar pasekMenu = new JMenuBar();
         JMenu menuPlik = new JMenu("Polisa");
@@ -108,14 +108,21 @@ public class Ramka extends JFrame{
         add(pasekMenu,BorderLayout.PAGE_START);
         add(buttonPanel, BorderLayout.CENTER);
         buttonPanel.add(label);
-        buttonPanel.add(label1);
-        buttonPanel.add(label2);
-        buttonPanel.add(label3);
-        buttonPanel.add(label4);
-        buttonPanel.add(label5);
-        buttonPanel.add(poletekst);
         buttonPanel.add(textField);
+        buttonPanel.add(label1);
         buttonPanel.add(textField1);
+        buttonPanel.add(label2);
+        buttonPanel.add(seasons);
+        buttonPanel.add(label3);
+        
+        buttonPanel.add(label4);
+        
+        buttonPanel.add(label5);
+        
+        
+       
+        
+        buttonPanel.add(poletekst,BorderLayout.PAGE_END);
         
         setLocation(500,500);
         setSize(500,500);
