@@ -90,7 +90,7 @@ public class Ramka extends JFrame{
         
         JCheckBox jCheckBox1 = new JCheckBox("Klimatyzacja");
         
-        TextArea wielowierszowePoleTekstowe = new TextArea( "", 5, 30 );
+        TextArea poletekst = new TextArea( "", 5, 30 );
         
         label.setLabelFor(textField);
         add(pasekMenu,BorderLayout.PAGE_START);
