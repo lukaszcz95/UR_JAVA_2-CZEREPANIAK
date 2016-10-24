@@ -6,6 +6,7 @@
 package samochod;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,6 +37,7 @@ public class Ramka extends JFrame{
  public Ramka(){
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel buttonPanel = new JPanel(new GridLayout(7,2));
         
         JMenuBar pasekMenu = new JMenuBar();
         JMenu menuPlik = new JMenu("Polisa");
@@ -50,6 +52,7 @@ public class Ramka extends JFrame{
         
         JMenuItem opcjaWyjdz = new JMenuItem("Wyjdz");
         opcjaWyjdz.addActionListener(new ActionListener(){
+            @Override
             public void actionPerformed(ActionEvent e){
                System.exit(0);
             }
@@ -58,10 +61,19 @@ public class Ramka extends JFrame{
         
 
         
-        JPanel buttonPanel = new JPanel(new BorderLayout());
-        JLabel label = new JLabel("imie: ");
-        label.setDisplayedMnemonic(KeyEvent.VK_N);
         
+        JLabel label = new JLabel("Imie: ");
+        label.setDisplayedMnemonic(KeyEvent.VK_N);
+        JLabel label1 = new JLabel("Nazwisko: ");
+        label1.setDisplayedMnemonic(KeyEvent.VK_N);
+        JLabel label2 = new JLabel("Marka auta: ");
+        label2.setDisplayedMnemonic(KeyEvent.VK_N);
+        JLabel label3 = new JLabel("Tapicerka: ");
+        label3.setDisplayedMnemonic(KeyEvent.VK_N);
+        JLabel label4 = new JLabel("ABS: ");
+        label4.setDisplayedMnemonic(KeyEvent.VK_N);
+        JLabel label5 = new JLabel("Klimatyzacja: ");
+        label5.setDisplayedMnemonic(KeyEvent.VK_N);
         
         
         JTextField textField = new JTextField();
@@ -76,7 +88,7 @@ public class Ramka extends JFrame{
             if (e.getStateChange()== ItemEvent.SELECTED){
             }
         });
-        
+        /*
         ButtonGroup tapicerka = new ButtonGroup();
         JRadioButton[] rodzaj = new JRadioButton[6];
         rodzaj[0]= new JRadioButton("Skorzana");
@@ -89,17 +101,25 @@ public class Ramka extends JFrame{
         JCheckBox jCheckBox = new JCheckBox("ABS");
         
         JCheckBox jCheckBox1 = new JCheckBox("Klimatyzacja");
-        
+        */
         TextArea poletekst = new TextArea( "", 5, 30 );
         
         label.setLabelFor(textField);
         add(pasekMenu,BorderLayout.PAGE_START);
-        add(buttonPanel, BorderLayout.LINE_START);
-        buttonPanel.add(label, BorderLayout.WEST);
-        buttonPanel.add(textField, BorderLayout.LINE_END);
+        add(buttonPanel, BorderLayout.CENTER);
+        buttonPanel.add(label);
+        buttonPanel.add(label1);
+        buttonPanel.add(label2);
+        buttonPanel.add(label3);
+        buttonPanel.add(label4);
+        buttonPanel.add(label5);
+        buttonPanel.add(poletekst);
+        buttonPanel.add(textField);
+        buttonPanel.add(textField1);
         
         setLocation(500,500);
         setSize(500,500);
+        setTitle("POLISA UBEZPIECZENIOWA");
         setVisible(true);
  }
  
