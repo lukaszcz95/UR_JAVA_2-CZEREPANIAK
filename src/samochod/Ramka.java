@@ -70,10 +70,6 @@ public class Ramka extends JFrame{
         label2.setDisplayedMnemonic(KeyEvent.VK_N);
         JLabel label3 = new JLabel("Tapicerka: ");
         label3.setDisplayedMnemonic(KeyEvent.VK_N);
-        JLabel label4 = new JLabel("ABS: ");
-        label4.setDisplayedMnemonic(KeyEvent.VK_N);
-        JLabel label5 = new JLabel("Klimatyzacja: ");
-        label5.setDisplayedMnemonic(KeyEvent.VK_N);
         
         
         JTextField textField = new JTextField();
@@ -93,15 +89,13 @@ public class Ramka extends JFrame{
         JRadioButton[] rodzaj = new JRadioButton[6];
         rodzaj[0]= new JRadioButton("Skorzana");
         rodzaj[1]= new JRadioButton("Material");
-        
         for(int i=0; i<rodzaj.length;i++) tapicerka.add((AbstractButton) rodzaj[i]);
         Box b1 = Box.createVerticalBox();
         for(int i=0; i<rodzaj.length;i++)b1.add(rodzaj[i]);
-        
-        JCheckBox jCheckBox = new JCheckBox("ABS");
-        
-        JCheckBox jCheckBox1 = new JCheckBox("Klimatyzacja");
         */
+        JCheckBox jCheckBox = new JCheckBox("ABS");
+        JCheckBox jCheckBox1 = new JCheckBox("Klimatyzacja");
+        
         TextArea poletekst = new TextArea( "", 5, 30 );
         
         label.setLabelFor(textField);
@@ -114,14 +108,10 @@ public class Ramka extends JFrame{
         buttonPanel.add(label2);
         buttonPanel.add(seasons);
         buttonPanel.add(label3);
-        
-        buttonPanel.add(label4);
-        
-        buttonPanel.add(label5);
-        
-        
-       
-        
+       // buttonPanel.add(ButtonGroup,tapicerka);
+        buttonPanel.add(jCheckBox);
+        buttonPanel.add(jCheckBox1);
+
         buttonPanel.add(poletekst,BorderLayout.PAGE_END);
         
         setLocation(500,500);
